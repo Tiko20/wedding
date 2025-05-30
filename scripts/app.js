@@ -23,7 +23,7 @@ const observer = new IntersectionObserver(
 // Start observing each target element
 elements.forEach((el) => observer.observe(el));
 
-const countdownDate = new Date("May 15, 2025 00:00:00").getTime();
+const countdownDate = new Date("Sep 05, 2025 00:00:00").getTime();
 
 const countdown = setInterval(() => {
   const now = new Date().getTime();

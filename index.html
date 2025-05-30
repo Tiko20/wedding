@@ -1,58 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <title>Հարսանեկան հրավեր</title>
-  </head>
-  <body>
-    <header>
-      <div class="header-container">
-         <div class="header-title">
-          <h1>Emily & John</h1> 
-          <div class="header-image-wrapper"><img src="./images/_1.png" alt="" srcset=""></div>
-         </div>
-         <div class="header-wedding-timer">
-          <div class="countdown-timer">
-            <span id="days">00</span>d :
-            <span id="hours">00</span>h :
-            <span id="minutes">00</span>m :
-            <span id="seconds">00</span>s
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <title>Հարսանեկան հրավեր</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-title">
+        <h1>Emily & John</h1>
+        <div class="header-image-wrapper"><img src="./images/_1.png" alt="" srcset=""></div>
+      </div>
+      <div class="header-wedding-timer">
+        <div class="countdown-timer">
+          <span id="days">00</span>d :
+          <span id="hours">00</span>h :
+          <span id="minutes">00</span>m :
+          <span id="seconds">00</span>s
         </div>
       </div>
-    </header>
-    <div class="sections">
-      <section class="section-wedding-day">
-        <div>
-          <h2>Հարգելի՛ հյուրեր</h2>
-          <p>
-            Սիրով հրավիրում ենք Ձեզ ներկա գտնվելու մեր հարսանյաց
-            արարողությանը։<br />
-            Ծանոթացեք ծրագրին և հաստատեք Ձեր ներկայությունը մինչև օգոստոսի 15-ը:
-          </p>
-        </div>
-      
-        </div>
-      </section>
-      <section>
-        <div class="image-card fade-in-left animate-on-scroll" >
-          <img src="./25perfectweddingcolorcombinations.0965dc82.jfif" alt="fade in left" />
-        </div>
-        <div class="image-card fade-in-right animate-on-scroll">
-          <img src="./25perfectweddingcolorcombinations.0965dc82.jfif" alt="fade in right" />
-        </div>
-      </section>      
-      <section>
-        <h2>Օրվա Ծրագիր</h2>
-      </section>
-      <section></section>
+    </div>
+  </header>
+  <div class="sections">
+    <section class="section-wedding-day-offer">
+      <div>
+        <h2>Հարգելի՛ հյուրեր</h2>
+        <p>
+          Սիրով հրավիրում ենք Ձեզ ներկա գտնվելու մեր հարսանյաց
+          արարողությանը։<br />
+          Ծանոթացեք ծրագրին և հաստատեք Ձեր ներկայությունը մինչև օգոստոսի 15-ը:
+        </p>
+      </div>
+      <div class="section-wedding-day">
+        <p>
+          05
+        </p>
+        <p>
+          09
+        </p>
+        <p>
+          25
+        </p>
+      </div>
+  </div>
+  </section>
+
+  <section>
+    <div class="image-card fade-in-left animate-on-scroll">
+      <img src="./images-heics/image4.jpg" alt="fade in left" />
+    </div>
+    <div class="image-card fade-in-right animate-on-scroll">
+      <img src="./images-heics/image4.jpg" alt="fade in right" />
+    </div>
+  </section>
+
+  <section>
+    <h2 class="wedding-day-map">Օրվա Ծրագիր</h2>
+
+    <!-- Հարսի տուն -->
+    <div class="map-card">
+      <div class="map-img">
+        <img src="./wedding-logos/rings.jpg" alt="Հարսի տուն">
+      </div>
+      <p class="map-title">Հարսի Տուն</p>
+      <div class="map-address">
+        13:00<br>
+        Աբովյան, 5-րդ մ/շ, 1-ին թաղամաս, 23 տուն
+      </div>
+      <div class="map-address-btn">
+        <a href="https://www.google.com/maps?q=40.28413147899042,44.639512386760295" target="_blank"
+          rel="noopener noreferrer">
+          Ինչպես հասնել
+        </a>
+      </div>
     </div>
 
-    
-    
-    <script src="./scripts/app.js"></script>
-    
-  </body>
+    <div class="image-card fade-in-top animate-on-scroll">
+      <img src="./images-heics/image2.jpg" alt="Հարսի տան լուսանկար" />
+    </div>
+
+    <!-- Եկեղեցի -->
+    <div class="map-card">
+      <div class="map-img">
+        <img src="./wedding-logos/church2.jpg" alt="Եկեղեցի">
+      </div>
+      <p class="map-title">Եկեղեցի</p>
+      <div class="map-address">
+        14:00<br>
+        Աբովյան, Սուրբ Հովհաննես
+      </div>
+      <div class="map-address-btn">
+        <a href="https://maps.google.com/maps?q=40.275723026946515,44.63074312406482" target="_blank"
+          rel="noopener noreferrer">
+          Ինչպես հասնել
+        </a>
+      </div>
+    </div>
+
+    <div class="image-card fade-in-bottom animate-on-scroll">
+      <img src="./images-heics/image4.jpg" alt="Եկեղեցու լուսանկար" />
+    </div>
+
+    <!-- Փեսայի տուն -->
+    <div class="map-card">
+      <div class="map-img">
+        <img src="./wedding-logos/rings.jpg" alt="Փեսայի տուն">
+      </div>
+      <p class="map-title">Փեսայի Տուն</p>
+      <div class="map-address">
+        16:00<br>
+        Աբովյան, Երիտասարդական 1/1
+      </div>
+      <div class="map-address-btn">
+        <a href="https://maps.google.com/maps?q=40.267921200535746,44.62570271515146" target="_blank"
+          rel="noopener noreferrer">
+          Ինչպես հասնել
+        </a>
+      </div>
+    </div>
+
+    <div class="image-card fade-in-left animate-on-scroll">
+      <img src="./images-heics/image5.jpg" alt="Փեսայի տան լուսանկար" />
+    </div>
+
+    <!-- Հարսանյաց սրահ -->
+    <div class="map-card">
+      <div class="map-img">
+        <img src="./wedding-logos/sweet4.jpg" alt="Փեսայի տուն">
+      </div>
+      <p class="map-title">Ռեստորան</p>
+      <div class="map-address">
+        17:30<br>
+        Ավան, Աճառյան 37
+      </div>
+      <div class="map-address-btn">
+        <a href="https://maps.google.com/maps?q=40.22034721020845,44.56098631778445" target="_blank"
+          rel="noopener noreferrer">
+          Ինչպես հասնել
+        </a>
+      </div>
+    </div>
+
+    <div class="image-card fade-in-right animate-on-scroll">
+      <img src="./images-heics/image5.jpg" alt="Փեսայի տան լուսանկար" />
+    </div>
+
+  </section>
+  <!-- <section></section> -->
+  </div>
+
+
+
+  <script src="./scripts/app.js"></script>
+
+</body>
+
 </html>
