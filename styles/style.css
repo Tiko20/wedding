@@ -18,19 +18,19 @@ body {
 }
 
 h1 {
-  color: var(--primary-text-color);
+  color: var(--main-background-text-color);
+  line-height: 135vh;
 }
 
 .header-container {
   width: 100%;
   height: 100vh;
+  background-image: url("../images-heics/image1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../African-Sacramento-Wedding.jpg");
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   position: relative;
 }
@@ -45,40 +45,50 @@ h1 {
 
 .header-image-wrapper img {
   width: 100%;
+  mix-blend-mode: color-burn;
 }
 
 .header-wedding-timer {
   position: absolute;
   bottom: 40px;
   left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.7);
+  transform: translate(-50%, 20px);
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  background-color: transparent;
   padding: 10px 20px;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
-  color: var(--main-text-color);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: var(--main-background-text-color);
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.header-wedding-timer.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.header-wedding-timer h3 {
+  margin-bottom: 8px;
 }
 
 .countdown-timer {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
-.countdown-timer span {
-  font-size: 24px;
-}
-
-.sections {
-  width: 100%;
-  background-color: var(--main-color);
-}
-
-.calendar-container > div {
+.time-card {
   display: flex;
-  justify-content: space-between;
-  min-width: 320px;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.time-card p:first-child {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .section-wedding-day div:nth-child(1) {
@@ -92,17 +102,46 @@ h1 {
   opacity: 0.8;
 }
 
-.section-wedding-day .day-on-calendar {
-  border: 1px solid red;
+.sections {
+  width: 100%;
+  background-color: var(--main-color);
+}
+
+.calendar-container > div {
+  display: flex;
+  justify-content: space-between;
+  min-width: 320px;
+}
+
+.section-wedding-day-offer {
+  height: auto;
+}
+
+.section-wedding-day-offer div:nth-child(1) {
+  text-align: center;
+}
+
+.section-wedding-day-offer div:nth-child(1) p {
+  font-size: 20px;
+  font-family: "MontserratArm", Arial, sans-serif;
+  color: var(--main-text-color);
+  opacity: 0.8;
+}
+
+.section-wedding-day-offer .day-on-calendar {
   width: 100%;
   justify-content: center;
   display: flex;
 }
+.section-wedding-day-offer .section-wedding-day {
+  text-align: center;
+  padding: 16px;
+  font-size: 32px;
+}
 
 section {
   width: 100%;
-  height: 100vh;
-  border: 1px solid black;
+  height: auto;
   padding: 4px;
   margin-top: 10px;
 }
@@ -120,7 +159,6 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 1px solid black;
   object-fit: cover;
   opacity: 0;
   transform: translateX(0);
@@ -135,7 +173,81 @@ section {
   transform: translateX(50%);
 }
 
+.fade-in-top > img {
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.fade-in-bottom > img {
+  transform: translateY(50%);
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
 .image-card.visible > img {
   opacity: 1;
   transform: translateX(0);
+}
+
+.wedding-day-map {
+  text-align: center;
+  font-size: 32px;
+}
+
+.map-card {
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.map-img {
+  width: 256px;
+  height: 256px;
+  text-align: center;
+}
+.map-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: color-burn;
+}
+
+.map-title {
+  text-align: center;
+  color: var(--secondary-text-color);
+  font-weight: bold;
+}
+
+.map-address {
+  text-align: center;
+}
+
+.map-address-btn a {
+  display: inline-block;
+  padding: 8px 32px;
+  background-color: transparent;
+  border: 1px solid var(--main-text-color);
+  border-radius: 25px;
+  text-decoration: none;
+  color: var(--main-text-color);
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.map-address-btn a:hover {
+  background-color: var(--secondary-text-color);
+  color: #fff;
+  border-color: var(--secondary-text-color);
+}
+
+.map-address-btn a:active {
+  transform: scale(0.97);
+  background-color: var(--primary-text-color);
+  border-color: var(--primary-text-color);
+  color: #fff;
 }
