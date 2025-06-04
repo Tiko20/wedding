@@ -52,15 +52,7 @@
   --fs-4xl: 36px; /* 4x extra large */
   --fs-5xl: 40px; /* 5x extra large */
   --fs-6xl: 56px; /* 6x extra large */
-  --fs-7xl: 72px;
-
-  --ff-sans-serif-armenia: "sans-serif-armenia";
-  --ff-arm-all-allegro: "arm-all-allegro";
-  --ff-brand-gyumri: "brand-gyumri";
-  --ff-montserrat-arm: "montserrat-arm";
-  --ff-poqrik: "poqrik";
-  --ff-shk-dzeragir: "shk-dzeragir";
-  --ff-vrdznagir: "vrdznagir";
+  --fs-7xl: 72px; /* 7x extra large */
 }
 
 * {
@@ -76,7 +68,7 @@ body {
 h1 {
   color: var(--main-background-text-color);
   line-height: 120vh;
-  font-family: poqrik;
+  font-family: arm-all-allegro;
   font-size: var(--fs-7xl);
 }
 
@@ -111,13 +103,11 @@ h1 {
   bottom: 40px;
   left: 50%;
   transform: translate(-50%, 20px);
-  /* background-color: rgba(255, 255, 255, 0.7); */
   background-color: transparent;
   border-radius: 10px;
   font-size: var(--fs-lg);
   font-weight: bold;
   color: var(--main-background-text-color);
-  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
   opacity: 0;
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
@@ -164,7 +154,7 @@ h1 {
 .section-wedding-day-offer p {
   font-size: var(--fs-2xl);
   text-align: center;
-  font-family: var(--ff-poqrik);
+  font-family: poq;
   color: var(--main-text-color);
   opacity: 0.8;
 }
@@ -178,7 +168,7 @@ h1 {
   text-align: center;
   padding-top: 8px;
   margin-top: 16px;
-  font-family: var(--ff-vrdznagir);
+  font-family: vrdznagir;
   font-size: var(--fs-5xl);
 }
 
@@ -290,6 +280,7 @@ time.map-time {
 .map-address {
   font-size: var(--fs-md, 16px);
   color: var(--text-color, #333);
+  text-align: start;
 }
 
 /* .map-address-btn a {
@@ -512,6 +503,7 @@ h1.all {
 @media screen and (max-width: 768px) {
   h1 {
     line-height: 135vh;
+    font-size: var(--fs-6xl);
   }
   .map-card {
     width: 100%;
@@ -520,12 +512,21 @@ h1.all {
     flex-direction: column;
   }
 
+  .map-title {
+    text-align: center;
+  }
+  .map-address {
+    text-align: center;
+  }
+
   .time-card {
     font-size: var(--fs-lg);
+    text-align: center;
   }
 
   .time-card:first-child {
     font-size: var(--fs-lg);
+    text-align: center;
   }
 
   h3 {

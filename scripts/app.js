@@ -10,7 +10,7 @@ function updateCountdown() {
   if (distance <= 0) {
     clearInterval(countdown);
     document.querySelector(".countdown-timer").innerHTML =
-      "💍 Today is the wedding!";
+      "💍 Այսօր հարսանիքն է!";
     header.classList.add("visible");
     return;
   }
