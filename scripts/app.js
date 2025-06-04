@@ -85,7 +85,7 @@ function sendToWhatsApp(event) {
       `Գալու եմ հարսանիքին: \n` +
       `Հյուրերի քանակը՝ ${count}:`;
   } else {
-    message = `Բարև✨։ ${name} : \n` + `Կներեք չեմ կարող գալ :`;
+    message = `Բարև✨։ ${name} : \n` + `Կներեք չեմ կարող գալ:`;
   }
   const encodedMessage = encodeURIComponent(message);
   const phone = "37494881206"; // Replace with your actual number
