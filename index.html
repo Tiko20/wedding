@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Հարսանեկան հրավեր</title>
 </head>
 
@@ -13,9 +15,6 @@
     <div class="header-container">
       <div class="header-title">
         <h1>Արման և Լիլիթ</h1>
-        <!-- <div class="header-image-wrapper">
-            <img src="./wedding-logos/infinity1.jpg" alt="Wedding Logo" />
-          </div> -->
       </div>
 
       <div class="header-wedding-timer">
@@ -45,10 +44,7 @@
     <section class="section-wedding-day-offer">
       <p>Սրտանց հրավիրում ենք Ձեզ՝</p>
       <p>կիսվելու մեր կյանքի ամենավառ ու լուսավոր օրը։</p><br>
-      <p>Սպասում ենք Ձեզ մեր հարսանյաց տոնակատարությանը՝</p>
-      <p>որտեղ յուրաքանչյուր ժպիտը կբացահայտի մեր սիրո պատմությունը։</p>
-
-
+      <p>Սպասում ենք Ձեզ մեր հարսանյաց տոնակատարությանը:</p>
       <p class="section-wedding-day">5 Սեպտեմբերի 2025</p>
 
     </section>
@@ -59,7 +55,7 @@
         <img src="./images-heics/image4.jpg" alt="fade in left" />
       </div>
       <div class="image-card fade-in-right animate-on-scroll">
-        <img src="./images-heics/image4.jpg" alt="fade in right" />
+        <img src="./images-heics/image1.jpg" alt="fade in right" />
       </div>
     </section>
 
@@ -127,47 +123,85 @@
       </div>
 
     </section>
+    <section>
+
+      <div class="image-card fade-in-top animate-on-scroll">
+        <img src="./images-heics/image2.jpg" alt="fade in top" />
+      </div>
+    </section>
 
     <section>
 
 
       <form class="guest-form" onsubmit="sendToWhatsApp(event)">
-        <label>
-          Անուն
-          <input type="text" id="guestName" required />
-        </label>
+        <div class="guest-form-container">
+          <div class="form-title">Խնդրում ենք հաստատել Ձեր ներկայությունը միջոցառմանը</div>
+          <div class="radio-group">
+            <div>
 
-        <label>
-          Հյուրերի քանակը
-          <input type="number" id="guestCount" required />
-        </label>
+              <label>
+                <input type="radio" name="isComing" value="yes" required onchange="toggleGuestCount(this)" />
+                Կգամ
+              </label>
+            </div>
 
-        <label>
-          Մասնակցություն
-          <select id="isComing" required>
-            <option value="Այո">Այո</option>
-            <option value="Ոչ">Ոչ</option>
-          </select>
-        </label>
+            <div>
 
-        <div class="button-group">
-          <button type="submit" class="whatsapp-button">Ուղարկել WhatsApp-ով</button>
-          <button type="button" class="telegram-button" onclick="sendToTelegram()">Ուղարկել Telegram-ով</button>
+              <label>
+                <input type="radio" name="isComing" value="no" onchange="toggleGuestCount(this)" />
+                Չեմ կարողանա գալ
+              </label>
+            </div>
+          </div>
+          <div class="input-container">
+            <input required id="guestName" type="text" name="guestName" placeholder="Անուն Ազգանուն" value="" />
+          </div>
+
+          <div class="input-container">
+            <input required id="guestCount" type="number" name="guestCount" placeholder="Հյուրերի քանակ" value="" />
+          </div>
+
+
+
+          <div>
+            <button type="submit" class="whatsapp-button">Ուղարկել WhatsApp</button>
+          </div>
         </div>
+
       </form>
 
     </section>
+    <div>
+      <hr>
+    </div>
+
+    <footer class="footer">
+      <h3 class="footer-title">Կապ մեզ հետ</h3>
+
+      <div class="footer-icons">
+        <a href="https://wa.me/37494881206" target="_blank" class="footer-icon" title="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://t.me/username" target="_blank" class="footer-icon" title="Telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="tel:+37494881206" class="footer-icon" title="Call">
+          <i class="fas fa-phone"></i>
+        </a>
+      </div>
+
+      <p class="footer-contact">
+        Contact us: | +374 94 881206
+      </p>
+      <p class="footer-copy">
+        &copy; 2025 MT. All rights reserved.
+      </p>
+    </footer>
   </div>
 
 
 
-  <h1 class="sans-serif-armenia">Հայերեն</h1>
-  <h1 class="braind-gyumri">Հայերեն</h1>
-  <h1 class="montserrat-arm">Հայերեն</h1>
-  <h1 class="poqrik">Հայերեն</h1>
-  <h1 class="SHK-Dzeragir">Հայերեն</h1>
-  <h1 class="vrdznagir">Հայերեն</h1>
-  <h1 class="all">Հայերեն</h1>
+
 
   <script src="./scripts/app.js"></script>
 

@@ -59,36 +59,37 @@ const observer = new IntersectionObserver(
 
 elements.forEach((el) => observer.observe(el));
 
-function sendToWhatsApp(event) {
-  event.preventDefault();
+function toggleGuestCount(event) {
+  const guestCountContainer = document.getElementById("guestCount");
 
-  const name = document.getElementById("guestName").value;
-  const count = document.getElementById("guestCount").value;
-  const coming = document.getElementById("isComing").value;
-
-  const message =
-    `Բարև։ Ես՝ ${name} եմ, գալու եմ հարսանիքին։\n` +
-    `Հյուրերի քանակը՝ ${count}:`;
-  const encodedMessage = encodeURIComponent(message);
-
-  const phone = "37494881206"; // Replace with your actual number
-  const url = `https://wa.me/${phone}?text=${encodedMessage}`;
-
-  window.open(url, "_blank");
+  if (event.value === "no") {
+    guestCountContainer.style.display = "none";
+    guestCountContainer.required = false;
+  } else {
+    guestCountContainer.style.display = "block";
+    guestCountContainer.required = true;
+  }
+  guestCountContainer.value = "";
 }
 
-function sendToTelegram() {
+function sendToWhatsApp(event) {
+  event.preventDefault();
   const name = document.getElementById("guestName").value;
   const count = document.getElementById("guestCount").value;
-  const coming = document.getElementById("isComing").value;
+  const coming = document.querySelector('input[name="isComing"]:checked').value;
 
-  const message =
-    `Բարև։ Ես՝ ${name} եմ, գալու եմ հարսանիքին։\n` +
-    `Հյուրերի քանակը՝ ${count}:`;
+  let message = "";
+  if (coming === "yes") {
+    message =
+      `Բարև✨։ ${name}: \n` +
+      `Գալու եմ հարսանիքին: \n` +
+      `Հյուրերի քանակը՝ ${count}:`;
+  } else {
+    message = `Բարև✨։ ${name} : \n` + `Կներեք չեմ կարող գալ :`;
+  }
   const encodedMessage = encodeURIComponent(message);
-
-  const telegramUsername = "Lilit_Saghyan"; // Replace with your Telegram username
-  const url = `https://t.me/${telegramUsername}?start=${encodedMessage}`;
+  const phone = "37494881206"; // Replace with your actual number
+  let url = `https://wa.me/${phone}?text=${encodedMessage}`;
 
   window.open(url, "_blank");
 }
