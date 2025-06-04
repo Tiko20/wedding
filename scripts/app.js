@@ -9,20 +9,29 @@ function updateCountdown() {
 
   if (distance <= 0) {
     clearInterval(countdown);
-    document.querySelector(".countdown-timer").innerHTML = "💍 Today is the wedding!";
+    document.querySelector(".countdown-timer").innerHTML =
+      "💍 Today is the wedding!";
     header.classList.add("visible");
     return;
   }
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   document.getElementById("days").textContent = String(days).padStart(2, "0");
   document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+  document.getElementById("minutes").textContent = String(minutes).padStart(
+    2,
+    "0"
+  );
+  document.getElementById("seconds").textContent = String(seconds).padStart(
+    2,
+    "0"
+  );
 
   if (!header.classList.contains("visible")) {
     header.classList.add("visible");
@@ -38,14 +47,44 @@ const elements = document.querySelectorAll(".animate-on-scroll");
 
 const observer = new IntersectionObserver(
   (entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
         observer.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.5 }
+  { threshold: 0.3 }
 );
 
-elements.forEach(el => observer.observe(el));
+elements.forEach((el) => observer.observe(el));
+
+function sendToWhatsApp(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("guestName").value;
+  const count = document.getElementById("guestCount").value;
+  const coming = document.getElementById("isComing").value;
+
+  const message = `Բարև։ Ես՝ ${name}, կհանդիպեմ հարսանիքին։ Հյուրերի քանակը՝ ${count}։ Մասնակցություն՝ ${coming}։`;
+  const encodedMessage = encodeURIComponent(message);
+
+  const phone = "37499850505"; // Replace with your actual number
+  const url = `https://wa.me/${phone}?text=${encodedMessage}`;
+
+  window.open(url, "_blank");
+}
+
+function sendToTelegram() {
+  const name = document.getElementById("guestName").value;
+  const count = document.getElementById("guestCount").value;
+  const coming = document.getElementById("isComing").value;
+
+  const message = `Բարև։ Ես՝ ${name}, կհանդիպեմ հարսանիքին։ Հյուրերի քանակը՝ ${count}։ Մասնակցություն՝ ${coming}։`;
+  const encodedMessage = encodeURIComponent(message);
+
+  const telegramUsername = "mane202"; // Replace with your Telegram username
+  const url = `https://t.me/${telegramUsername}?start=${encodedMessage}`;
+
+  window.open(url, "_blank");
+}

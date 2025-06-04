@@ -1,8 +1,66 @@
+@font-face {
+  font-family: sans-serif-armenia;
+  src: url("../fonts/sansArmenia.ttf");
+}
+
+@font-face {
+  font-family: arm-all-allegro;
+  src: url("../fonts/ArmAllegroU.ttf");
+}
+
+@font-face {
+  font-family: brand-gyumri;
+  src: url("../fonts/BraindGyumri.otf");
+}
+
+@font-face {
+  font-family: montserrat-arm;
+  src: url("../fonts/Montserratarm.otf");
+}
+
+@font-face {
+  font-family: poqrik;
+  src: url("../fonts/poqrik.ttf");
+}
+
+@font-face {
+  font-family: shk-dzeragir;
+  src: url("../fonts/SHK_Dzeragir.otf");
+}
+
+@font-face {
+  font-family: vrdznagir;
+  src: url("../fonts/Vrdznagir.otf");
+}
+
 :root {
+  --color-1: #f1e6ee; /* Light background (e.g. cards, body) */
+  --color-2: #ffb6b9; /* Soft rose (highlights, buttons) */
+  --color-3: #fae3d9; /* Warm beige (sections, boxes) */
+  --color-4: #bbded6; /* Cool mint (accents, headers) */
   --main-text-color: #23292e;
   --primary-text-color: #dfb3ae;
   --secondary-text-color: #e4bc62;
   --main-background-text-color: #ddded9;
+  --fs-xs: 8px; /* extra small */
+  --fs-sm: 12px; /* small */
+  --fs-md: 16px; /* medium */
+  --fs-lg: 20px; /* large */
+  --fs-xl: 24px; /* extra large */
+  --fs-2xl: 28px; /* 2x extra large */
+  --fs-3xl: 32px; /* 3x extra large */
+  --fs-4xl: 36px; /* 4x extra large */
+  --fs-5xl: 40px; /* 5x extra large */
+  --fs-6xl: 56px; /* 6x extra large */
+  --fs-7xl: 72px;
+
+  --ff-sans-serif-armenia: "sans-serif-armenia";
+  --ff-arm-all-allegro: "arm-all-allegro";
+  --ff-brand-gyumri: "brand-gyumri";
+  --ff-montserrat-arm: "montserrat-arm";
+  --ff-poqrik: "poqrik";
+  --ff-shk-dzeragir: "shk-dzeragir";
+  --ff-vrdznagir: "vrdznagir";
 }
 
 * {
@@ -12,20 +70,20 @@
 }
 
 body {
-  font-family: sans-serif;
-  background: var(--main-background-text-color);
-  padding-bottom: 200px;
+  background: var(--color-1);
 }
 
 h1 {
   color: var(--main-background-text-color);
-  line-height: 135vh;
+  line-height: 120vh;
+  font-family: poqrik;
+  font-size: var(--fs-7xl);
 }
 
 .header-container {
   width: 100%;
   height: 100vh;
-  background-image: url("../images-heics/image1.jpg");
+  background-image: url("../images-heics/main.JPG");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -55,9 +113,8 @@ h1 {
   transform: translate(-50%, 20px);
   /* background-color: rgba(255, 255, 255, 0.7); */
   background-color: transparent;
-  padding: 10px 20px;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: var(--fs-lg);
   font-weight: bold;
   color: var(--main-background-text-color);
   /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
@@ -72,6 +129,7 @@ h1 {
 
 .header-wedding-timer h3 {
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .countdown-timer {
@@ -83,28 +141,13 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: var(--fs-4xl);
   gap: 4px;
 }
 
 .time-card p:first-child {
-  font-size: 24px;
+  font-size: var(--fs-4xl);
   font-weight: bold;
-}
-
-.section-wedding-day div:nth-child(1) {
-  text-align: center;
-}
-
-.section-wedding-day div:nth-child(1) p {
-  font-size: 20px;
-  font-family: "MontserratArm", Arial, sans-serif;
-  color: var(--main-text-color);
-  opacity: 0.8;
-}
-
-.sections {
-  width: 100%;
-  background-color: var(--main-color);
 }
 
 .calendar-container > div {
@@ -115,15 +158,13 @@ h1 {
 
 .section-wedding-day-offer {
   height: auto;
+  margin-bottom: 25px;
 }
 
-.section-wedding-day-offer div:nth-child(1) {
+.section-wedding-day-offer p {
+  font-size: var(--fs-2xl);
   text-align: center;
-}
-
-.section-wedding-day-offer div:nth-child(1) p {
-  font-size: 20px;
-  font-family: "MontserratArm", Arial, sans-serif;
+  font-family: var(--ff-poqrik);
   color: var(--main-text-color);
   opacity: 0.8;
 }
@@ -135,8 +176,10 @@ h1 {
 }
 .section-wedding-day-offer .section-wedding-day {
   text-align: center;
-  padding: 16px;
-  font-size: 32px;
+  padding-top: 8px;
+  margin-top: 16px;
+  font-family: var(--ff-vrdznagir);
+  font-size: var(--fs-5xl);
 }
 
 section {
@@ -192,22 +235,30 @@ section {
 
 .wedding-day-map {
   text-align: center;
-  font-size: 32px;
+  font-size: var(--fs-5xl);
+  font-family: var(--ff-sans-serif-armenia);
+  margin-bottom: 16px;
 }
 
 .map-card {
-  padding: 8px 16px;
+  padding: 16px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 8px;
+  max-width: 800px;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .map-img {
-  width: 256px;
-  height: 256px;
-  text-align: center;
+  flex-shrink: 0;
+  width: 240px;
+  height: 240px;
+  border-radius: 12px;
+  overflow: hidden;
 }
+
 .map-img img {
   width: 100%;
   height: 100%;
@@ -215,17 +266,33 @@ section {
   mix-blend-mode: color-burn;
 }
 
+.map-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  max-width: 100%;
+  flex: 1;
+}
+
 .map-title {
-  text-align: center;
-  color: var(--secondary-text-color);
+  color: var(--secondary-text-color, #444);
   font-weight: bold;
+  font-size: var(--fs-3xl, 24px);
+}
+
+time.map-time {
+  font-size: var(--fs-2xl, 20px);
+  color: var(--primary-color, #000);
+  font-weight: 600;
 }
 
 .map-address {
-  text-align: center;
+  font-size: var(--fs-md, 16px);
+  color: var(--text-color, #333);
 }
 
-.map-address-btn a {
+/* .map-address-btn a {
   display: inline-block;
   padding: 8px 32px;
   background-color: transparent;
@@ -250,4 +317,218 @@ section {
   background-color: var(--primary-text-color);
   border-color: var(--primary-text-color);
   color: #fff;
+} */
+
+h1.sans-serif-armenia {
+  font-family: sans-serif-armenia;
+  line-height: normal;
+  color: black;
+}
+
+h1.braind-gyumri {
+  font-family: brand-gyumri;
+  line-height: normal;
+  color: black;
+}
+
+h1.montserrat-arm {
+  font-family: montserrat-arm;
+  line-height: normal;
+  color: black;
+}
+h1.poqrik {
+  font-family: poqrik;
+  line-height: normal;
+  color: black;
+}
+h1.SHK-Dzeragir {
+  font-family: deragir;
+  line-height: normal;
+  color: black;
+}
+
+h1.vrdznagir {
+  font-family: vrdznagir;
+  line-height: normal;
+  color: black;
+}
+
+h1.all {
+  font-family: arm-all-allegro;
+  line-height: normal;
+  color: black;
+}
+
+.location-card {
+  margin: 24px auto;
+  padding: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.location-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.location-image {
+  max-width: 600px;
+  height: 450px;
+  padding: 16px 0;
+  margin: 0 auto;
+}
+
+.location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.location-map {
+  max-width: 600px;
+  text-align: center;
+  margin: 16px auto 0;
+}
+.location-map iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+}
+
+.guest-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.guest-form label {
+  font-weight: 600;
+  color: #333;
+}
+
+.guest-form input,
+.guest-form select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.guest-form input:focus,
+.guest-form select:focus {
+  outline: none;
+  border-color: #888;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.whatsapp-button,
+.telegram-button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  color: white;
+}
+
+.whatsapp-button {
+  background-color: #25d366;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+.telegram-button {
+  background-color: #0088cc;
+}
+
+.telegram-button:hover {
+  background-color: #007ab8;
+}
+
+@media screen and (max-width: 425px) {
+  .header-wedding-timer {
+    font-size: var(--fs-md);
+  }
+
+  h1 {
+    font-size: var(--fs-5xl);
+  }
+
+  .time-card {
+    font-size: var(--fs-lg);
+    padding: 0;
+  }
+
+  .time-card p:first-child {
+    font-size: var(--fs-lg);
+  }
+
+  .section-wedding-day-offer p {
+    font-size: var(--fs-lg);
+  }
+
+  .section-wedding-day-offer .section-wedding-day {
+    font-size: var(--fs-2xl);
+  }
+
+  h2.wedding-day-map {
+    font-size: var(--fs-xl);
+  }
+
+  .map-title {
+    font-size: var(--fs-lg);
+  }
+
+  time.map-time {
+    font-size: var(--fs-lg);
+  }
+
+  .map-address {
+    font-size: var(--fs-sm);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    line-height: 135vh;
+  }
+  .map-card {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .time-card {
+    font-size: var(--fs-lg);
+  }
+
+  .time-card:first-child {
+    font-size: var(--fs-lg);
+  }
+
+  h3 {
+    font-size: var(--fs-md);
+  }
 }
