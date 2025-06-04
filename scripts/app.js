@@ -66,10 +66,12 @@ function sendToWhatsApp(event) {
   const count = document.getElementById("guestCount").value;
   const coming = document.getElementById("isComing").value;
 
-  const message = `Բարև։ Ես՝ ${name}, կհանդիպեմ հարսանիքին։ Հյուրերի քանակը՝ ${count}։ Մասնակցություն՝ ${coming}։`;
+  const message =
+    `Բարև։ Ես՝ ${name} եմ, գալու եմ հարսանիքին։\n` +
+    `Հյուրերի քանակը՝ ${count}:`;
   const encodedMessage = encodeURIComponent(message);
 
-  const phone = "37499850505"; // Replace with your actual number
+  const phone = "37494881206"; // Replace with your actual number
   const url = `https://wa.me/${phone}?text=${encodedMessage}`;
 
   window.open(url, "_blank");
@@ -80,10 +82,12 @@ function sendToTelegram() {
   const count = document.getElementById("guestCount").value;
   const coming = document.getElementById("isComing").value;
 
-  const message = `Բարև։ Ես՝ ${name}, կհանդիպեմ հարսանիքին։ Հյուրերի քանակը՝ ${count}։ Մասնակցություն՝ ${coming}։`;
+  const message =
+    `Բարև։ Ես՝ ${name} եմ, գալու եմ հարսանիքին։\n` +
+    `Հյուրերի քանակը՝ ${count}:`;
   const encodedMessage = encodeURIComponent(message);
 
-  const telegramUsername = "mane202"; // Replace with your Telegram username
+  const telegramUsername = "Lilit_Saghyan"; // Replace with your Telegram username
   const url = `https://t.me/${telegramUsername}?start=${encodedMessage}`;
 
   window.open(url, "_blank");
