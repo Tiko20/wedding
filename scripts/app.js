@@ -81,11 +81,11 @@ function sendToWhatsApp(event) {
   let message = "";
   if (coming === "yes") {
     message =
-      `Բարև✨։ ${name}: \n` +
+      `Բարև✨։  ${name}: \n` +
       `Գալու եմ հարսանիքին: \n` +
-      `Հյուրերի քանակը՝ ${count}:`;
+      `Հյուրերի քանակը - ${count}:`;
   } else {
-    message = `Բարև✨։ ${name} : \n` + `Կներեք չեմ կարող գալ:`;
+    message = `Բարև✨։ ${name} : \n` + ` Կներեք չեմ կարող գալ:`;
   }
   const encodedMessage = encodeURIComponent(message);
   const phone = "37494881206"; // Replace with your actual number
